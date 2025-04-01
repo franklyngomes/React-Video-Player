@@ -14,7 +14,11 @@ const FileUploader: React.FC<{ onFileUpload: (file: File) => void }> = ({ onFile
     return true; // Accept the file
   };
   const { getRootProps, getInputProps } = useDropzone({
-    accept: ['video/mp4', 'video/webm', 'video/avi'] as const, // Only accept video files
+    accept:  {
+        "video/mp4": [".mp4"],
+        "video/mpeg": [".mpeg"],
+        "video/webm": [".webm"],
+      },
     onDrop: (acceptedFiles) => {
       // Filter files and reject invalid ones
       const validFiles = acceptedFiles.filter(fileValidator);
