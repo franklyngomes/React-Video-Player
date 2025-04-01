@@ -18,6 +18,10 @@ const FileUploader: React.FC<{ onFileUpload: (file: File) => void }> = ({ onFile
         "video/mp4": [".mp4"],
         "video/mpeg": [".mpeg"],
         "video/webm": [".webm"],
+        "video/avi": [".avi"],
+        "video/quicktime": [".quicktime"],
+        "video/x-msvideo": [".x-msvideo"],
+        "video/x-flv": [".x-flv"],
       },
     onDrop: (acceptedFiles) => {
       // Filter files and reject invalid ones
